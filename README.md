@@ -6,7 +6,7 @@
 
 它不是 prompt 合集。每个 skill 都是一个给 agent 使用的紧凑工作规程：什么时候触发、该看什么上下文、如何行动、完成前需要哪些验证或交接证据。
 
-这个仓库采用 **索引优先** 的结构：已经独立开源的 skill 以各自仓库为 source of truth；本仓的 `skills/` 目录只是安装/浏览镜像。尚未拆出的 workflow 会暂时以内置 skill 形式保留，后续可逐步拆成独立仓库。
+这个仓库采用 **索引优先** 的结构：每个 skill 都有自己的独立仓库作为 source of truth；本仓的 `skills/` 目录只是安装/浏览镜像。
 
 ## 安装
 
@@ -22,12 +22,12 @@ skills/air-game-dev-pm
 <!-- SKILLS:START -->
 | Skill | 分类 | 来源 | 描述 |
 |---|---|---|---|
-| [`agentic-automation-review-gate`](skills/agentic-automation-review-gate) | Agent 运维 | [本仓内置](https://github.com/Sttrevens/4dgames-skills) | 在合并、部署或对外声称可靠之前，审查 recurring agent automation 的产出和证据。 |
-| [`4d-bot-integration`](skills/4d-bot-integration) | Bot 运行时 | [相关项目](https://github.com/Sttrevens/4d-bot) | 安全处理 4D Games bot runtime、飞书/Lark channel worker、租户边界和 Codex worker 交接。 |
-| [`learning-project-planner`](skills/learning-project-planner) | 个人系统 | [本仓内置](https://github.com/Sttrevens/4dgames-skills) | 把一个学习主题变成可持续项目：路线图、长期上下文、仪表盘和第一周课程。 |
+| [`agentic-automation-review-gate`](skills/agentic-automation-review-gate) | Agent 运维 | [独立仓库](https://github.com/Sttrevens/agentic-automation-review-gate-skill) | 在合并、部署或对外声称可靠之前，审查 recurring agent automation 的产出和证据。 |
+| [`4d-bot-integration`](skills/4d-bot-integration) | Bot 运行时 | [独立仓库](https://github.com/Sttrevens/4d-bot-integration-skill) | 安全处理 4D Games bot runtime、飞书/Lark channel worker、租户边界和 Codex worker 交接。 |
+| [`learning-project-planner`](skills/learning-project-planner) | 个人系统 | [独立仓库](https://github.com/Sttrevens/learning-project-planner-skill) | 把一个学习主题变成可持续项目：路线图、长期上下文、仪表盘和第一周课程。 |
 | [`personal-health-pulse`](skills/personal-health-pulse) | 个人系统 | [独立仓库](https://github.com/Sttrevens/personal-health-pulse-skill) | 构建或运行本地优先的个人健康记录与教练 agent，支持任意消息通道。 |
 | [`air-game-dev-pm`](skills/air-game-dev-pm) | 游戏制作 | [独立仓库](https://github.com/Sttrevens/air-game-dev-pm-skill) | 从玩家体验出发，把游戏规划拆成支柱、特性、验证等级、任务和可验收迭代石头。 |
-| [`steam-launch-forecast`](skills/steam-launch-forecast) | 游戏商业 | [本仓内置](https://github.com/Sttrevens/4dgames-skills) | 基于愿望单、Steam/社区信号、区域需求和可比游戏，预测 Steam 首发表现。 |
+| [`steam-launch-forecast`](skills/steam-launch-forecast) | 游戏商业 | [独立仓库](https://github.com/Sttrevens/steam-launch-forecast-skill) | 基于愿望单、Steam/社区信号、区域需求和可比游戏，预测 Steam 首发表现。 |
 <!-- SKILLS:END -->
 
 ## 设计原则
