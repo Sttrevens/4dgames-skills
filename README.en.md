@@ -26,14 +26,14 @@ skills/air-game-dev-pm
 ## Skills
 
 <!-- SKILLS:START -->
-| Skill | Category | Source | Description |
-|---|---|---|---|
-| [`agentic-automation-review-gate`](skills/agentic-automation-review-gate) | Agent Operations | [Upstream repo](https://github.com/Sttrevens/agentic-automation-review-gate-skill) | Review recurring agent automation output before merge, deployment, or user-facing trust claims. |
-| [`4d-bot-integration`](skills/4d-bot-integration) | Bot Runtime | [Upstream repo](https://github.com/Sttrevens/4d-bot-integration-skill) | Work safely with 4D Games bot runtimes, Feishu/Lark channel workers, tenant boundaries, and Codex worker handoffs. |
-| [`steam-launch-forecast`](skills/steam-launch-forecast) | Game Business | [Upstream repo](https://github.com/Sttrevens/steam-launch-forecast-skill) | Forecast Steam launch performance from wishlists, Steam/community signals, regional demand, and comparable games. |
-| [`air-game-dev-pm`](skills/air-game-dev-pm) | Game Production | [Upstream repo](https://github.com/Sttrevens/air-game-dev-pm-skill) | Plan game development from player experience into mainstays, features, validation levels, tasks, and iteration stones. |
-| [`learning-project-planner`](skills/learning-project-planner) | Personal Systems | [Upstream repo](https://github.com/Sttrevens/learning-project-planner-skill) | Turn a study topic into a durable learning project with roadmap, context, dashboard, and first-week lesson. |
-| [`personal-health-pulse`](skills/personal-health-pulse) | Personal Systems | [Upstream repo](https://github.com/Sttrevens/personal-health-pulse-skill) | Build or operate a local-first personal health tracking and coaching agent across any supported channel. |
+| Skill | Category | Description |
+|---|---|---|
+| [`agentic-automation-review-gate`](https://github.com/Sttrevens/agentic-automation-review-gate-skill) | Agent Operations | Review recurring agent automation output before merge, deployment, or user-facing trust claims. |
+| [`4d-bot-integration`](https://github.com/Sttrevens/4d-bot-integration-skill) | Bot Runtime | Work safely with 4D Games bot runtimes, Feishu/Lark channel workers, tenant boundaries, and Codex worker handoffs. |
+| [`steam-launch-forecast`](https://github.com/Sttrevens/steam-launch-forecast-skill) | Game Business | Forecast Steam launch performance from wishlists, Steam/community signals, regional demand, and comparable games. |
+| [`air-game-dev-pm`](https://github.com/Sttrevens/air-game-dev-pm-skill) | Game Production | Plan game development from player experience into mainstays, features, validation levels, tasks, and iteration stones. |
+| [`learning-project-planner`](https://github.com/Sttrevens/learning-project-planner-skill) | Personal Systems | Turn a study topic into a durable learning project with roadmap, context, dashboard, and first-week lesson. |
+| [`personal-health-pulse`](https://github.com/Sttrevens/personal-health-pulse-skill) | Personal Systems | Build or operate a local-first personal health tracking and coaching agent across any supported channel. |
 <!-- SKILLS:END -->
 
 ## Design Principles

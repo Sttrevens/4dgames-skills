@@ -36,31 +36,20 @@ def repo_url(skill: dict) -> str:
     return f"https://github.com/{skill['repo']}"
 
 
-def source_label(skill: dict, lang: str) -> str:
-    labels = {
-        "repo": ("Upstream repo", "独立仓库"),
-        "bundled": ("Bundled here", "本仓内置"),
-        "related-project": ("Related project", "相关项目"),
-    }
-    en, zh = labels[skill["source_type"]]
-    label = zh if lang == "zh" else en
-    return f"[{label}]({repo_url(skill)})"
-
-
 def render(skills: list[dict], lang: str) -> str:
     if lang == "zh":
-        rows = ["| Skill | 分类 | 来源 | 描述 |", "|---|---|---|---|"]
+        rows = ["| Skill | 分类 | 描述 |", "|---|---|---|"]
         category_key = "category_zh"
         tagline_key = "tagline_zh"
     else:
-        rows = ["| Skill | Category | Source | Description |", "|---|---|---|---|"]
+        rows = ["| Skill | Category | Description |", "|---|---|---|"]
         category_key = "category_en"
         tagline_key = "tagline_en"
 
     for skill in sorted(skills, key=lambda item: (item[category_key], item["name"])):
         name = skill["name"]
         rows.append(
-            f"| [`{name}`](skills/{name}) | {skill[category_key]} | {source_label(skill, lang)} | {skill[tagline_key]} |"
+            f"| [`{name}`]({repo_url(skill)}) | {skill[category_key]} | {skill[tagline_key]} |"
         )
     return "\n".join(rows)
 
