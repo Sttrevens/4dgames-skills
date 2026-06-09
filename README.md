@@ -1,53 +1,49 @@
 # 4D Games Skills
 
-4D Games Skills is a public index of reusable agent skills from 4D Games'
-game-development and personal-operations workflows.
+[English](README.en.md)
 
-The goal is not to collect prompts. Each skill is a compact operating procedure
-for an agent: when to use it, what context to inspect, how to act, and what
-verification or handoff should exist before the work is considered useful.
+4D Games Skills 是 4D Games 从游戏开发、Agent 自动化和个人系统里沉淀出来的一组可复用 agent skills。
 
-## Install
+它不是 prompt 合集。每个 skill 都是一个给 agent 使用的紧凑工作规程：什么时候触发、该看什么上下文、如何行动、完成前需要哪些验证或交接证据。
 
-For now, install a skill by pointing your agent or skills CLI at this repository
-and the relevant directory under `skills/`.
+## 安装
+
+目前可以把 agent 或 skills CLI 指向本仓库里的具体目录：
 
 ```bash
-# Example path
+# 示例路径
 skills/air-game-dev-pm
 ```
 
 ## Skills
 
 <!-- SKILLS:START -->
-| Skill | Category | Description |
+| Skill | 分类 | 描述 |
 |---|---|---|
-| [`agentic-automation-review-gate`](skills/agentic-automation-review-gate) | Agent Operations | Review recurring agent automation output before merge, deployment, or user-facing trust claims. |
-| [`4d-bot-integration`](skills/4d-bot-integration) | Bot Runtime | Work safely with 4D Games bot runtimes, Feishu/Lark channel workers, tenant boundaries, and Codex worker handoffs. |
-| [`steam-launch-forecast`](skills/steam-launch-forecast) | Game Business | Forecast Steam launch performance from wishlists, Steam/community signals, regional demand, and comparable games. |
-| [`air-game-dev-pm`](skills/air-game-dev-pm) | Game Production | Plan game development from player experience into mainstays, features, validation levels, tasks, and iteration stones. |
-| [`learning-project-planner`](skills/learning-project-planner) | Personal Systems | Turn a study topic into a durable learning project with roadmap, context, dashboard, and first-week lesson. |
-| [`personal-health-pulse`](skills/personal-health-pulse) | Personal Systems | Build or operate a local-first personal health tracking and coaching agent across any supported channel. |
+| [`agentic-automation-review-gate`](skills/agentic-automation-review-gate) | Agent 运维 | 在合并、部署或对外声称可靠之前，审查 recurring agent automation 的产出和证据。 |
+| [`4d-bot-integration`](skills/4d-bot-integration) | Bot 运行时 | 安全处理 4D Games bot runtime、飞书/Lark channel worker、租户边界和 Codex worker 交接。 |
+| [`learning-project-planner`](skills/learning-project-planner) | 个人系统 | 把一个学习主题变成可持续项目：路线图、长期上下文、仪表盘和第一周课程。 |
+| [`personal-health-pulse`](skills/personal-health-pulse) | 个人系统 | 构建或运行本地优先的个人健康记录与教练 agent，支持任意消息通道。 |
+| [`air-game-dev-pm`](skills/air-game-dev-pm) | 游戏制作 | 从玩家体验出发，把游戏规划拆成支柱、特性、验证等级、任务和可验收迭代石头。 |
+| [`steam-launch-forecast`](skills/steam-launch-forecast) | 游戏商业 | 基于愿望单、Steam/社区信号、区域需求和可比游戏，预测 Steam 首发表现。 |
 <!-- SKILLS:END -->
 
-## Design Principles
+## 设计原则
 
-- Keep `SKILL.md` concise enough for agent context windows.
-- Move long schemas, examples, and implementation details into `references/`.
-- Do not publish private paths, user IDs, tenant IDs, chat logs, customer data,
-  API tokens, or internal deployment secrets.
-- Favor workflows that create evidence: tests, screenshots, reports, branch
-  names, acceptance criteria, rollback signals, or next-stone handoffs.
-- Treat local-first trust as a product feature, not an afterthought.
+- `SKILL.md` 要足够精简，适合进入 agent 的上下文窗口。
+- 长 schema、例子和实现细节放进 `references/`。
+- 不公开私人路径、用户 ID、租户 ID、聊天记录、客户数据、API token 或内部部署密钥。
+- 优先沉淀能产生证据的工作流：测试、截图、报告、分支名、验收标准、回滚信号和 next-stone handoff。
+- 把 local-first trust 当成产品能力，而不是附带要求。
 
-## Development
+## 开发
 
-Edit `skills.yaml` and the corresponding `skills/<name>/SKILL.md`. Then run:
+编辑 `skills.yaml` 和对应的 `skills/<name>/SKILL.md`，然后运行：
 
 ```bash
 python3 scripts/render_readme.py
 python3 scripts/validate_skills.py
 ```
 
-The README skill table is rendered from `skills.yaml`.
+README 和 README.en.md 的 skill 表格都由 `skills.yaml` 渲染。
 

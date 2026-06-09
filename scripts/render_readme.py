@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
-"""Render README.md skill table from skills.yaml."""
+"""Render README.md and README.en.md skill tables from skills.yaml."""
 from __future__ import annotations
 
 import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-README = ROOT / "README.md"
+READMES = {
+    "zh": ROOT / "README.md",
+    "en": ROOT / "README.en.md",
+}
 SKILLS = ROOT / "skills.yaml"
 
 
@@ -29,12 +32,20 @@ def load_skills() -> list[dict]:
     return skills
 
 
-def render(skills: list[dict]) -> str:
-    rows = ["| Skill | Category | Description |", "|---|---|---|"]
-    for skill in sorted(skills, key=lambda item: (item["category"], item["name"])):
+def render(skills: list[dict], lang: str) -> str:
+    if lang == "zh":
+        rows = ["| Skill | 分类 | 描述 |", "|---|---|---|"]
+        category_key = "category_zh"
+        tagline_key = "tagline_zh"
+    else:
+        rows = ["| Skill | Category | Description |", "|---|---|---|"]
+        category_key = "category_en"
+        tagline_key = "tagline_en"
+
+    for skill in sorted(skills, key=lambda item: (item[category_key], item["name"])):
         name = skill["name"]
         rows.append(
-            f"| [`{name}`](skills/{name}) | {skill['category']} | {skill['tagline']} |"
+            f"| [`{name}`](skills/{name}) | {skill[category_key]} | {skill[tagline_key]} |"
         )
     return "\n".join(rows)
 
@@ -52,8 +63,9 @@ def replace_block(text: str, body: str) -> str:
 
 def main() -> int:
     skills = load_skills()
-    README.write_text(replace_block(README.read_text(), render(skills)))
-    print(f"Rendered {len(skills)} skills.")
+    for lang, path in READMES.items():
+        path.write_text(replace_block(path.read_text(), render(skills, lang)))
+        print(f"Rendered {path.name} with {len(skills)} skills.")
     return 0
 
 

@@ -40,7 +40,7 @@ def main() -> int:
         seen.add(name)
         if not (ROOT / "skills" / name / "SKILL.md").exists():
             errors.append(f"{name}: missing skills/{name}/SKILL.md")
-        for field in ("category", "tagline", "description"):
+        for field in ("category_en", "category_zh", "tagline_en", "tagline_zh", "description"):
             if not skill.get(field):
                 errors.append(f"{name}: missing {field}")
     if errors:
