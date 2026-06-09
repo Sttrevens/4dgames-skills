@@ -40,9 +40,20 @@ def main() -> int:
         seen.add(name)
         if not (ROOT / "skills" / name / "SKILL.md").exists():
             errors.append(f"{name}: missing skills/{name}/SKILL.md")
-        for field in ("category_en", "category_zh", "tagline_en", "tagline_zh", "description"):
+        for field in (
+            "source_type",
+            "repo",
+            "skill_path",
+            "category_en",
+            "category_zh",
+            "tagline_en",
+            "tagline_zh",
+            "description",
+        ):
             if not skill.get(field):
                 errors.append(f"{name}: missing {field}")
+        if skill.get("source_type") not in {"repo", "bundled", "related-project"}:
+            errors.append(f"{name}: invalid source_type {skill.get('source_type')}")
     if errors:
         for error in errors:
             print(f"- {error}")

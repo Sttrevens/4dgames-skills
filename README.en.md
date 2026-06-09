@@ -9,6 +9,11 @@ The goal is not to collect prompts. Each skill is a compact operating procedure
 for an agent: when to use it, what context to inspect, how to act, and what
 verification or handoff should exist before the work is considered useful.
 
+This repository is **index-first**. Skills that already have independent public
+repositories keep those repos as the source of truth; the local `skills/`
+directory is an install/browsing mirror. Workflows that have not been split out
+yet remain bundled here and can be extracted later.
+
 ## Install
 
 For now, install a skill by pointing your agent or skills CLI at the relevant
@@ -22,14 +27,14 @@ skills/air-game-dev-pm
 ## Skills
 
 <!-- SKILLS:START -->
-| Skill | Category | Description |
-|---|---|---|
-| [`agentic-automation-review-gate`](skills/agentic-automation-review-gate) | Agent Operations | Review recurring agent automation output before merge, deployment, or user-facing trust claims. |
-| [`4d-bot-integration`](skills/4d-bot-integration) | Bot Runtime | Work safely with 4D Games bot runtimes, Feishu/Lark channel workers, tenant boundaries, and Codex worker handoffs. |
-| [`steam-launch-forecast`](skills/steam-launch-forecast) | Game Business | Forecast Steam launch performance from wishlists, Steam/community signals, regional demand, and comparable games. |
-| [`air-game-dev-pm`](skills/air-game-dev-pm) | Game Production | Plan game development from player experience into mainstays, features, validation levels, tasks, and iteration stones. |
-| [`learning-project-planner`](skills/learning-project-planner) | Personal Systems | Turn a study topic into a durable learning project with roadmap, context, dashboard, and first-week lesson. |
-| [`personal-health-pulse`](skills/personal-health-pulse) | Personal Systems | Build or operate a local-first personal health tracking and coaching agent across any supported channel. |
+| Skill | Category | Source | Description |
+|---|---|---|---|
+| [`agentic-automation-review-gate`](skills/agentic-automation-review-gate) | Agent Operations | [Bundled here](https://github.com/Sttrevens/4dgames-skills) | Review recurring agent automation output before merge, deployment, or user-facing trust claims. |
+| [`4d-bot-integration`](skills/4d-bot-integration) | Bot Runtime | [Related project](https://github.com/Sttrevens/4d-bot) | Work safely with 4D Games bot runtimes, Feishu/Lark channel workers, tenant boundaries, and Codex worker handoffs. |
+| [`steam-launch-forecast`](skills/steam-launch-forecast) | Game Business | [Bundled here](https://github.com/Sttrevens/4dgames-skills) | Forecast Steam launch performance from wishlists, Steam/community signals, regional demand, and comparable games. |
+| [`air-game-dev-pm`](skills/air-game-dev-pm) | Game Production | [Upstream repo](https://github.com/Sttrevens/air-game-dev-pm-skill) | Plan game development from player experience into mainstays, features, validation levels, tasks, and iteration stones. |
+| [`learning-project-planner`](skills/learning-project-planner) | Personal Systems | [Bundled here](https://github.com/Sttrevens/4dgames-skills) | Turn a study topic into a durable learning project with roadmap, context, dashboard, and first-week lesson. |
+| [`personal-health-pulse`](skills/personal-health-pulse) | Personal Systems | [Upstream repo](https://github.com/Sttrevens/personal-health-pulse-skill) | Build or operate a local-first personal health tracking and coaching agent across any supported channel. |
 <!-- SKILLS:END -->
 
 ## Design Principles
@@ -51,5 +56,5 @@ python3 scripts/render_readme.py
 python3 scripts/validate_skills.py
 ```
 
-Both README files are rendered from `skills.yaml`.
-
+Both README files are rendered from `skills.yaml`. Upstream skill mirrors can be
+updated with `python3 scripts/sync_skills.py`.

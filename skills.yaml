@@ -1,36 +1,54 @@
 version: 1
 skills:
   - name: air-game-dev-pm
+    source_type: repo
+    repo: Sttrevens/air-game-dev-pm-skill
+    skill_path: .
     category_en: Game Production
     category_zh: 游戏制作
     tagline_en: Plan game development from player experience into mainstays, features, validation levels, tasks, and iteration stones.
     tagline_zh: 从玩家体验出发，把游戏规划拆成支柱、特性、验证等级、任务和可验收迭代石头。
     description: Air's game-development project management method for structuring game ideas, milestones, sprint plans, feature roadmaps, production audits, MVP/prototype scope, and team task breakdowns.
   - name: steam-launch-forecast
+    source_type: bundled
+    repo: Sttrevens/4dgames-skills
+    skill_path: skills/steam-launch-forecast
     category_en: Game Business
     category_zh: 游戏商业
     tagline_en: Forecast Steam launch performance from wishlists, Steam/community signals, regional demand, and comparable games.
     tagline_zh: 基于愿望单、Steam/社区信号、区域需求和可比游戏，预测 Steam 首发表现。
     description: Forecast Steam launch sales from wishlists, SteamDB/community signals, social heat, regional player preferences, and recent comparable games.
   - name: personal-health-pulse
+    source_type: repo
+    repo: Sttrevens/personal-health-pulse-skill
+    skill_path: personal-health-pulse
     category_en: Personal Systems
     category_zh: 个人系统
     tagline_en: Build or operate a local-first personal health tracking and coaching agent across any supported channel.
     tagline_zh: 构建或运行本地优先的个人健康记录与教练 agent，支持任意消息通道。
     description: Build or operate a channel-agnostic personal health tracking and coaching agent for nutrition, training, sleep, recovery, reminders, scoring, and weekly self-review.
   - name: learning-project-planner
+    source_type: bundled
+    repo: Sttrevens/4dgames-skills
+    skill_path: skills/learning-project-planner
     category_en: Personal Systems
     category_zh: 个人系统
     tagline_en: Turn a study topic into a durable learning project with roadmap, context, dashboard, and first-week lesson.
     tagline_zh: 把一个学习主题变成可持续项目：路线图、长期上下文、仪表盘和第一周课程。
     description: Create durable self-study projects for any topic by generating a roadmap, long-term context file, dashboard, and first-week lesson.
   - name: agentic-automation-review-gate
+    source_type: bundled
+    repo: Sttrevens/4dgames-skills
+    skill_path: skills/agentic-automation-review-gate
     category_en: Agent Operations
     category_zh: Agent 运维
     tagline_en: Review recurring agent automation output before merge, deployment, or user-facing trust claims.
     tagline_zh: 在合并、部署或对外声称可靠之前，审查 recurring agent automation 的产出和证据。
     description: Use when recurring Codex/AI automations produce code, reports, QA evidence, or next-step recommendations that need a human-quality review gate before merge, deployment, publication, or trust claims.
   - name: 4d-bot-integration
+    source_type: related-project
+    repo: Sttrevens/4d-bot
+    skill_path: skills/4d-bot-integration
     category_en: Bot Runtime
     category_zh: Bot 运行时
     tagline_en: Work safely with 4D Games bot runtimes, Feishu/Lark channel workers, tenant boundaries, and Codex worker handoffs.
