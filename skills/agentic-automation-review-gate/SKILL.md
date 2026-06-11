@@ -84,3 +84,10 @@ ACCEPT / REQUEST CHANGES / REJECT / NO CANDIDATE
 - For game projects, product-facing claims require playable, runtime, visual, or
   carefully scoped static evidence.
 
+## Common Failure Modes
+
+- Accepting an automation because the scheduler ran, even though there is no
+  candidate artifact.
+- Treating green tests as enough when the automation changed unrelated scope.
+- Letting a report make user-facing trust claims without runtime proof.
+- Giving vague feedback that the next automation run cannot execute.

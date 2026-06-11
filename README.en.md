@@ -38,6 +38,7 @@ skills/air-game-dev-pm
 
 ## Design Principles
 
+- Run every public skill through the [`Skill Release Gate`](docs/skill-release-gate.md): who uses it, why install it, what is visible in 10 seconds, how it is verified, and where the boundary is.
 - Keep `SKILL.md` concise enough for agent context windows.
 - Move long schemas, examples, and implementation details into `references/`.
 - Do not publish private paths, user IDs, tenant IDs, chat logs, customer data,

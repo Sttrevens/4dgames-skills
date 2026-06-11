@@ -76,3 +76,10 @@ Keep personal agents, customer bots, and internal project bots separate unless a
 clear product decision says otherwise. Shared libraries are fine; shared
 production message paths are not the default.
 
+## Common Failure Modes
+
+- Adding a worker before mapping send/callback identity.
+- Mixing tenant memory, tools, or logs for convenience.
+- Testing by sending into a real group before dry-run verification.
+- Copying personal-agent behavior into a customer bot runtime without explicit
+  product approval.

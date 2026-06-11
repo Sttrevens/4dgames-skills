@@ -1,6 +1,6 @@
 ---
 name: steam-launch-forecast
-description: Forecast Steam launch sales from wishlists, SteamDB/community signals, social heat, regional player preferences, and recent comparable games.
+description: Use when a user needs a Steam game launch forecast, wishlist-to-sales read, comparable-game analysis, regional demand split, or market signal review for first-week or first-month performance.
 ---
 
 # Steam Launch Forecast
@@ -56,3 +56,9 @@ For multiple games, add a ranking table first.
 - Separate China-facing and Western/global demand when evidence supports it.
 - Do not make investment or publishing claims from wishlist count alone.
 
+## Common Failure Modes
+
+- Converting wishlists to sales with one fixed multiplier.
+- Using old comparables when the genre or Steam visibility environment changed.
+- Treating Western press silence as global demand weakness for China-facing games.
+- Inventing private wishlist rank, revenue, or publisher data.

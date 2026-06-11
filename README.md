@@ -32,6 +32,7 @@ skills/air-game-dev-pm
 
 ## 设计原则
 
+- 每个公开 skill 发布前先过一遍 [`Skill Release Gate`](docs/skill-release-gate.md)：谁会用、为什么安装、10 秒能看到什么产物、如何验证、边界在哪里。
 - `SKILL.md` 要足够精简，适合进入 agent 的上下文窗口。
 - 长 schema、例子和实现细节放进 `references/`。
 - 不公开私人路径、用户 ID、租户 ID、聊天记录、客户数据、API token 或内部部署密钥。
