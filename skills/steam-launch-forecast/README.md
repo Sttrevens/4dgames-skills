@@ -1,8 +1,8 @@
 # Steam Launch Forecast Skill
 
 Forecast Steam launch performance with ranges, comparable games, regional demand
-splits, and explicit uncertainty instead of turning wishlists into fake
-precision.
+splits, explicit uncertainty, and an auditable knowledge boundary instead of
+turning wishlists into fake precision.
 
 ## 10-Second Proof
 
@@ -10,6 +10,8 @@ The skill returns a forecast packet:
 
 ```text
 Game:
+Forecast mode:
+Knowledge cutoff:
 Known inputs:
 Comparable logic:
 Funnel read:
@@ -52,11 +54,17 @@ The skill can support market research and publishing discussion. It should not
 present a forecast as investment advice, guarantee revenue, or infer private
 wishlist data that the user did not provide.
 
+It ships no private calibration dataset, game-specific actuals, local paths,
+screenshots, or user/session identifiers. Use the public
+[calibration contract](references/calibration-contract.md) to keep forecast
+issue time, knowledge cutoff, evidence tier, and calibration claims explicit.
+
 ## Verification Assets
 
 - [`examples/test-prompts.md`](examples/test-prompts.md) includes forecast
-  prompts for known wishlists, missing wishlists, released games, and regional
-  split reads.
+  prompts for known wishlists, missing wishlists, leakage checks, released-game
+  reads, and regional split reads.
+- Run `node --test tests/*.test.mjs` to verify the public auditability contract.
 
 ## Install
 
